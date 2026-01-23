@@ -26,6 +26,16 @@ const syntaxPatterns: SyntaxPattern[] = [
         pattern: /_([^_]+)_/,
         transform: ([, text]) => <em>{text}</em>,
     },
+    {
+        pattern: /\[([#\w().,]+)\]\s*████/,
+        transform: ([, color]) => (
+            <span 
+                className="inline-block w-4 h-4 rounded border border-gray-400 mr-2" 
+                style={{ backgroundColor: color }}
+                title={color}
+            />
+        ),
+    },
 ];
 
 export function transformMarkdown(text: string): React.ReactNode[][] {
