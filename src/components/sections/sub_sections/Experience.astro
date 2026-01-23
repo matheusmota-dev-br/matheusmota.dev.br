@@ -1,31 +1,12 @@
 ---
 import { CardListSection } from "@/components/CardListSection";
-import { useTranslations } from "@/hooks/use-translations";
-import { getLangFromUrl } from "@/utils/get-lang-from-url";
+import cvData from "@/config/cv.json";
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-
-const experiences = Object.keys(t("cv.experiences")).map((key) => {
-  const experience = t(`cv.experiences.${key}`);
-  const skills = Object.keys(t(`cv.experiences.${key}.skills`)).map(
-    (skill) => ({
-      id: skill,
-      name: t(`cv.experiences.${key}.skills.${skill}`),
-    }),
-  );
-  return {
-    title: experience.title,
-    sub_title: experience.sub_title,
-    years: experience.years,
-    details: experience.details,
-    skills,
-  };
-});
+const experiences = cvData.experiences;
 ---
 
 <CardListSection
   client:only
-  title={t("pages.home.sections.experiences.title")}
+  title="Experiences"
   items={experiences}
 />

@@ -1,5 +1,8 @@
 export async function GET() {
-    const response = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSyceMwoDVbcwIz8qp3n2wtjg8zdo5S7Egb7CzurL5ma8csOvON1kQzBA1gETVFNHB_FX6N67K0oX62/pub?output=tsv')
+    // This API route will not work in static builds
+    // Consider fetching data directly in components or using a build-time data generation
+    try {
+        const response = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSyceMwoDVbcwIz8qp3n2wtjg8zdo5S7Egb7CzurL5ma8csOvON1kQzBA1gETVFNHB_FX6N67K0oX62/pub?output=tsv')
     
     const csvText = await response.text();
 
@@ -19,5 +22,9 @@ export async function GET() {
         }, {});
     });
 
-    return new Response(JSON.stringify(data), { status: 200 });
+        return new Response(JSON.stringify(data), { status: 200 });
+    } catch (error) {
+        // Return empty array during build if fetch fails
+        return new Response(JSON.stringify([]), { status: 200 });
+    }
 }

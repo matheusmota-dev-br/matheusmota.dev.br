@@ -1,29 +1,12 @@
 ---
-import { getRelativeLocaleUrl } from "astro:i18n";
-
 import { Icon } from "astro-icon/components";
 import ThemeToggle from "@/components/ThemeToggle.astro";
-import { useTranslations } from "@/hooks/use-translations";
-import { getLangFromUrl } from "@/utils/get-lang-from-url";
-import LanguagePicker from "../LanguagePicker.astro";
+import cvData from "@/config/cv.json";
+import { pages } from "@/components/terminal/commands/constants";
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-
-const menuItems = [
-  {
-    name: t("pages.navigation.about"),
-    href: getRelativeLocaleUrl(lang, "/"),
-  },
-  {
-    name: t("pages.navigation.bio"),
-    href: getRelativeLocaleUrl(lang, "/bio"),
-  },
-  {
-    name: t("pages.navigation.tools"),
-    href: getRelativeLocaleUrl(lang, "/tools"),
-  },
-];
+// Mostrar apenas 3 itens visíveis, o resto vai no dropdown
+const visibleItems = pages.slice(0, 3);
+const hiddenItems = pages.slice(3);
 ---
 
 <header class="bg-background py-4 z-10 bg-default fixed w-full">
@@ -33,11 +16,11 @@ const menuItems = [
     <!-- Logo -->
     <div class="text-2xl font-bold">
       <a
-        href={getRelativeLocaleUrl(lang, "/")}
+        href="/"
         class="hover:text-offset flex flex-row"
       >
         <img class="w-10 h-10 flex mr-1" alt="logo" src="/favicon.png" />
-        {t("cv.basic.name")}
+        {cvData.basic.name}
       </a>
     </div>
 
@@ -45,18 +28,38 @@ const menuItems = [
       <!-- PC Menu -->
       <nav class="hidden sm:flex space-x-6 items-center">
         <a
-          href={getRelativeLocaleUrl(lang, "/terminal")}
+          href="/terminal"
           target="_blank"
           class="py-1 text-primary hover:bg-offset font-semi-bold"
           >{"</Terminal>"}</a
         >
         {
-          menuItems.map((item) => (
+          visibleItems.map((item) => (
             <a href={item.href} class="hover:text-offset">
               {item.name}
             </a>
           ))
         }
+        {hiddenItems.length > 0 && (
+          <div class="relative group">
+            <button class="hover:text-offset flex items-center">
+              More
+              <Icon name="mdi:chevron-down" class="size-4 ml-1" />
+            </button>
+            <div class="absolute right-0 mt-2 w-48 bg-background border border-offset rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20">
+              {
+                hiddenItems.map((item) => (
+                  <a
+                    href={item.href}
+                    class="block px-4 py-2 hover:bg-offset first:rounded-t-md last:rounded-b-md"
+                  >
+                    {item.name}
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+        )}
       </nav>
 
       <!-- Mobile Menu Button -->
@@ -67,21 +70,19 @@ const menuItems = [
       </div>
 
       <ThemeToggle />
-
-      <LanguagePicker />
     </div>
   </div>
 
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden sm:hidden">
     <a
-      href={getRelativeLocaleUrl(lang, "/terminal")}
+      href="/terminal"
       target="_blank"
       class="block px-4 py-2 text-primary hover:bg-offset font-semi-bold"
       >{"</Terminal>"}</a
     >
     {
-      menuItems.map((item) => (
+      pages.map((item) => (
         <a href={item.href} class="block px-4 py-2 hover:bg-offset">
           {item.name}
         </a>

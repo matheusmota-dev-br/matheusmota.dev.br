@@ -1,24 +1,19 @@
 ---
-import { useTranslations } from "@/hooks/use-translations";
-import { getLangFromUrl } from "@/utils/get-lang-from-url";
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 ---
 
 <section class="bg-background min-h-full flex items-center">
   <div class="flex flex-col items-center max-w-sm mx-auto text-center">
-    <h1 class="text-9xl text-primary">{t("label.sorry")}</h1>
+    <h1 class="text-9xl text-primary">Sorry</h1>
     <h1 class="mt-3 text-2xl font-semibold md:text-3xl">
-      {t("error.building_page.title")}
+      🚧 Under Construction 🚧
     </h1>
-    <p class="mt-4 text-offset">{t("error.building_page.description")}</p>
+    <p class="mt-4 text-offset">This page don't exist yet.</p>
 
     <a href="/">
       <button
         class="mt-5 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 rounded-lg shrink-0 sm:w-auto bg-primary hover:bg-secondary"
       >
-        {t("label.back_home")}
+        Back to home
       </button>
     </a>
   </div>

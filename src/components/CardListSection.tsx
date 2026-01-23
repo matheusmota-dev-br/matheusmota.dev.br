@@ -1,8 +1,5 @@
 import { useState } from 'react';
 import { CardListItem } from './CardListItem';
-import { useTranslations } from "@/hooks/use-translations";
-
-const t = useTranslations();
 
 interface Item {
     title: string;
@@ -48,10 +45,10 @@ export function CardListSection({
                     {items.length > numberOfItemsToShow && (
                         <button
                             className="ml-auto text-blue-600 hover:underline"
-                            aria-label={showAll ? t('label.show_less_label') : t('label.show_more_label')}
+                            aria-label={showAll ? 'Show less items' : 'Show more items'}
                             onClick={() => setShowAll(!showAll)}
                         >
-                            {showAll ? t('label.show_less') : t('label.show_more')}
+                            {showAll ? 'Show less' : 'Show more'}
                         </button>
                     )}
                 </div>

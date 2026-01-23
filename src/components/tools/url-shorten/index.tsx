@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { actions } from "@/actions";
+import { actions } from "@/lib";
 import { Loading } from "@/components/Loading";
 
 export function ShortenUrl() {

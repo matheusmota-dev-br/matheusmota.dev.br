@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { actions, type Book, type Status } from "@/actions";
+import { actions, type Book, type Status } from "@/lib";
 import { Loading } from "./Loading";
 
 const bookCoverMap: Record<string, string> = {

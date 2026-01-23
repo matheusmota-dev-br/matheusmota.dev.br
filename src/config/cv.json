@@ -41,10 +41,15 @@
             }
         ],
         "email": "matheussilvamartins1714@gmail.com",
-        "phone": "05585997200622",
+        "phone": "00000000000000",
         "job": "Software Engineer",
         "summary": "🚀 Full-Stack Developer in continuous learning. Experience working with Front-end and Back-end.",
         "cv_link": "https://docs.google.com/document/d/1vBahNPGMIn-GkLgDjp8yZt3GkKaROV6n4E9ZlSJuado"
+    },
+    "phrase": {
+        "text": "Wherever your level of aspiration is, that's where you can be one day.",
+        "author": "Adilson Marques da Cunha"
+
     },
     "social": [
         {

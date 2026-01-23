@@ -1,41 +1,55 @@
 ---
-import { getRelativeLocaleUrl } from "astro:i18n";
-
 import { Icon } from "astro-icon/components";
 import LayoutBio from "@/layouts/LayoutBio.astro";
 import { Version } from "@/components/Version";
-import {
-  defaultLang,
-  languages,
-  useTranslations,
-} from "@/hooks/use-translations";
-
-export function getStaticPaths() {
-  return languages.map((lang) => ({ params: { lang } }));
-}
-
-const { lang = defaultLang } = Astro.params;
-const t = useTranslations(lang);
+import cvData from "@/config/cv.json";
 
 const today = new Date();
 const currentYear = today.getFullYear();
 
-const social = Object.keys(t("cv.social")).map((key) => t(`cv.social.${key}`));
+const social = cvData.social;
 ---
 
 <LayoutBio
-  title={t("cv.basic.name")}
-  description={t("cv.basic.summary")}
+  title={cvData.basic.name}
+  description={cvData.basic.summary}
   image="/profile.jpeg"
 >
   <header class="flex flex-col gap-2 items-center justify-center px-8 pt-8">
-    <img
-      class="rounded-full size-32"
-      alt={t("cv.basic.name")}
-      src="http://github.com/Matheus1714.png"
-    />
-    <p class="text-2xl">{t("cv.basic.name")}</p>
-    <p class="">@{t("cv.basic.nickname")}</p>
+    <div class="relative flex justify-center group">
+      <div
+        class="absolute w-32 h-32 bg-secondary rounded-full rotate-6 shadow-2xl group-hover:rotate-3 transition-transform duration-300"
+      >
+      </div>
+      <div
+        class="absolute w-32 h-32 bg-primary rounded-full rotate-12 shadow-2xl group-hover:rotate-6 transition-transform duration-300"
+      >
+      </div>
+
+      <div class="flip-card w-32 h-32 relative">
+        <div class="flip-card-inner w-full h-full relative">
+          <div
+            class="flip-card-front absolute inset-0 flex items-center justify-center rounded-full"
+          >
+            <img
+              class="w-full h-full object-cover rounded-full"
+              alt={cvData.basic.name}
+              src="http://github.com/Matheus1714.png"
+            />
+          </div>
+          <div
+            class="flip-card-back absolute inset-0 bg-offset flex items-center justify-center text-sm font-bold rounded-full select-none"
+          >
+            <div class="mx-2 text-center">
+              <i class="text-[8px] leading-tight">{cvData.phrase.text}</i>
+              <p class="mt-1 text-[6px] leading-tight">{cvData.phrase.author}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="text-2xl">{cvData.basic.name}</p>
+    <p class="">@{cvData.basic.nickname}</p>
   </header>
 
   <div class="flex justify-center relative my-8">
@@ -44,26 +58,26 @@ const social = Object.keys(t("cv.social")).map((key) => t(`cv.social.${key}`));
   </div>
 
   <main class="mx-8 flex flex-col gap-4 text-center">
-    <h3 class="text-xl font-semi-bold">{t("label.personal")}</h3>
+    <h3 class="text-xl font-semi-bold">Personal</h3>
     <ul class="flex flex-col items-center gap-2">
       <li class="w-full md:w-96">
         <a
-          href={getRelativeLocaleUrl(lang, "/")}
-          title={t("label.portifolio")}
+          href="/"
+          title="Portifolio"
           class="px-10 py-4 text-base text-center
                         font-semibold transition-all duration-200 rounded
                         bg-primary hover:scale-110 focus:bg-secondary text-white
                         flex flex-row gap-2 justify-center items-center relative"
           role="button"
         >
-          {t("label.portifolio")}
+          Portifolio
         </a>
       </li>
 
       <li class="w-full md:w-96">
         <a
-          href={t("cv.basic.cv_link")}
-          title={t("label.cv")}
+          href={cvData.basic.cv_link}
+          title="CV"
           target="_blank"
           class="px-10 py-4 text-base text-center
                         font-semibold transition-all duration-200 rounded
@@ -71,12 +85,12 @@ const social = Object.keys(t("cv.social")).map((key) => t(`cv.social.${key}`));
                         flex flex-row gap-2 justify-center items-center relative"
           role="button"
         >
-          {t("label.cv")}
+          CV
         </a>
       </li>
     </ul>
 
-    <h3 class="text-xl font-semi-bold">{t("label.social")}</h3>
+    <h3 class="text-xl font-semi-bold">Social</h3>
     <ul class="flex flex-col items-center gap-2">
       {
         social.map((s) => (
@@ -117,7 +131,27 @@ const social = Object.keys(t("cv.social")).map((key) => t(`cv.social.${key}`));
     >
     <p class="text-sm">
       © {currentYear}
-      {t("cv.basic.name")}. {t("pages.footer.right")}
+      {cvData.basic.name}. All Rights Reserved.
     </p>
   </footer>
 </LayoutBio>
+
+<style>
+  .flip-card {
+    perspective: 1000px;
+  }
+  .flip-card-inner {
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+  .flip-card:active .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front,
+  .flip-card-back {
+    backface-visibility: hidden;
+  }
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+</style>

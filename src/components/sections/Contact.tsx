@@ -1,9 +1,8 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
-import { actions } from "@/actions";
-import { useTranslations } from "@/hooks/use-translations";
+import { actions } from "@/lib";
+import cvData from "@/config/cv.json";
 
-export function Contact({ lang }: { lang: string }) {
-  const t = useTranslations(lang);
+export function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,7 +21,7 @@ export function Contact({ lang }: { lang: string }) {
       from: formData.email,
       subject: '[DEV PORTFOLIO] New Job 💼',
       text: formData.message,
-      to: t('cv.basic.email'),
+      to: cvData.basic.email,
       cc: formData.email,
     });
 
@@ -38,7 +37,7 @@ export function Contact({ lang }: { lang: string }) {
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-3xl font-semibold text-center capitalize lg:text-4xl my-8">
-            {t('label.job_together')}
+            Let's work together
           </h1>
           <form
             method="POST"
@@ -46,7 +45,7 @@ export function Contact({ lang }: { lang: string }) {
             onSubmit={handleSubmit}
           >
             <label className="flex flex-col gap-y-2">
-              <span>{t('label.name')}</span>
+              <span>Name</span>
               <input
                 className="rounded-md bg-offset px-4 py-2 outline-none"
                 type="text"
@@ -58,7 +57,7 @@ export function Contact({ lang }: { lang: string }) {
               />
             </label>
             <label className="flex flex-col gap-y-2">
-              <span>{t('label.email')}</span>
+              <span>Email</span>
               <input
                 className="rounded-md bg-offset px-4 py-2 outline-none"
                 type="email"
@@ -70,11 +69,11 @@ export function Contact({ lang }: { lang: string }) {
               />
             </label>
             <label className="flex flex-col gap-y-2">
-              <span>{t('label.message')}</span>
+              <span>Message</span>
               <textarea
                 className="rounded-md bg-offset px-4 py-2 min-h-32 outline-none"
                 name="message"
-                placeholder={t('label.job_together')}
+                placeholder="Let's work together"
                 value={formData.message}
                 onChange={handleChange}
                 required
@@ -84,7 +83,7 @@ export function Contact({ lang }: { lang: string }) {
             <button
               className=" w-full px-10 py-4 text-base text-center font-semibold transition-all duration-200 rounded bg-primary hover:scale-110 focus:bg-secondary text-white"
             >
-              {t('label.submit')}
+              Submit
             </button>
           </form>
         </div>

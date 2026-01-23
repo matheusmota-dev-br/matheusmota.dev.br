@@ -1,29 +1,21 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { UrlPretty } from "@/components/tools/url-pretty";
-import { languages, useTranslations } from "@/hooks/use-translations";
-
-export function getStaticPaths() {
-  return languages.map((lang) => ({ params: { lang } }));
-}
-
-const { lang } = Astro.params;
-const t = useTranslations(lang);
 ---
 
 <Layout
-  title={t("tools.projects.url_pretty.title")}
-  description={t("tools.projects.url_pretty.description")}
+  title="URL Pretty"
+  description="A simple way to extract parameters from the url and present them in a beautiful way"
   image="/profile.jpeg"
 >
   <section class="bg-background">
     <div class="container px-6 py-8 mx-auto">
       <h1 class="text-3xl font-semibold text-center capitalize lg:text-4xl">
-        {t("tools.projects.url_pretty.title")}
+        URL Pretty
       </h1>
 
       <p class="mt-4 text-center text-gray-600 lg:text-lg">
-        {t("tools.projects.url_pretty.description")}
+        A simple way to extract parameters from the url and present them in a beautiful way
       </p>
 
       <div class="my-8 lg:mx-40">

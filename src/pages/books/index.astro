@@ -2,13 +2,8 @@
 "use client";
 
 import { BookList } from "@/components/BookList";
-import { languages } from "@/hooks/use-translations";
 import Layout from "@/layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
-
-export function getStaticPaths() {
-  return languages.map((lang) => ({ params: { lang } }));
-}
 ---
 
 <Layout

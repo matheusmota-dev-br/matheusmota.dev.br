@@ -5,27 +5,14 @@ import Resume from "@/components/sections/Resume.astro";
 import Portfolio from "@/components/sections/Portfolio.astro";
 import { Contact } from "@/components/sections/Contact";
 import AnimateAppear from "@/components/AnimateAppear.astro";
-import {
-	defaultLang,
-	languages,
-	useTranslations,
-} from "@/hooks/use-translations";
+import cvData from "@/config/cv.json";
 
-export function getStaticPaths() {
-	return languages.map((lang) => ({ params: { lang } }));
-}
-
-const { lang = defaultLang } = Astro.params;
-const t = useTranslations(lang);
-
-const projects = Object.keys(t("cv.projects")).map((key) =>
-	t(`cv.projects.${key}`),
-);
+const projects = cvData.projects;
 ---
 
 <Layout
-	title={t("cv.basic.name")}
-	description={t("cv.basic.summary")}
+	title={cvData.basic.name}
+	description={cvData.basic.summary}
 	image="/profile.jpeg"
 >
 	<AnimateAppear>
@@ -37,13 +24,13 @@ const projects = Object.keys(t("cv.projects")).map((key) =>
 	<AnimateAppear>
 		<Portfolio
 			section={{
-				name: t("pages.home.sections.projects.title"),
-				description: t("pages.home.sections.projects.description"),
+				name: "Projects",
+				description: "A selection of projects I have worked on.",
 			}}
 			projects={projects}
 		/>
 	</AnimateAppear>
 	<AnimateAppear>
-		<Contact lang={lang} client:load />
+		<Contact client:load />
 	</AnimateAppear>
 </Layout>
