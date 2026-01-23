@@ -76,8 +76,68 @@
     "experiences": [
         {
             "title": "Software Engineer",
+            "sub_title": "Maria Educação",
+            "years": "Feb 2025 - Present",
+            "details": "",
+            "skills": [
+                {
+                    "id": "python",
+                    "name": "Python"
+                },
+                {
+                    "id": "django",
+                    "name": "Django"
+                },
+                {
+                    "id": "temporalio",
+                    "name": "TemporalIO"
+                },
+                {
+                    "id": "fastapi",
+                    "name": "FastAPI"
+                },
+                {
+                    "id": "docker",
+                    "name": "Docker"
+                },
+                {
+                    "id": "react",
+                    "name": "React"
+                },
+                {
+                    "id": "nextjs",
+                    "name": "NextJS"
+                },
+                {
+                    "id": "typescript",
+                    "name": "Typescript"
+                },
+                {
+                    "id": "postgresql",
+                    "name": "PostgreSQL"
+                },
+                {
+                    "id": "gcp",
+                    "name": "Google Cloud Platform (GCP)"
+                },
+                {
+                    "id": "flutter",
+                    "name": "Flutter"
+                },
+                {
+                    "id": "dart",
+                    "name": "Dart"
+                },
+                {
+                    "id": "drift",
+                    "name": "Drift"
+                }
+            ]
+        },
+        {
+            "title": "Software Engineer",
             "sub_title": "DEEP ESG",
-            "years": "Feb 2024 - Present",
+            "years": "Feb 2024 - Jan 2025",
             "details": "I currently work on developing structural solutions for all of the company's products. Among the most relevant experiences, I highlight the implementation of login unification between products, allowing customers to access all services with a single account. This initiative enabled the adoption of Single Sign-On (SSO) and significantly simplified access management processes, providing a more integrated and efficient experience for users.",
             "skills": [
                 {
