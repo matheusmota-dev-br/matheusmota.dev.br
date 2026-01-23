@@ -1,4 +1,4 @@
-import { actions } from '@/actions/index';
+import { actions } from '@/lib';
 import { useEffect, useState } from 'react';
 
 export const prerender = false;

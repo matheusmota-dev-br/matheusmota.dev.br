@@ -2,7 +2,7 @@ import type { Command } from '../types';
 import { fileSystem } from '../filesystem';
 
 export class LsCommand implements Command {
-    execute(args: string[]): string {
+    execute(): string {
         const items = fileSystem.listDirectory();
 
         if (items.length === 0) {

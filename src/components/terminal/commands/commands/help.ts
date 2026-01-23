@@ -29,6 +29,7 @@ export class HelpCommand implements Command {
             "**Navigation & Tools:**",
             "  **pages**        List and navigate to website pages",
             "  **tools**        Access available web tools",
+            "  **back**         Go back to the previous page in browser history",
             "",
             "**Content & Media:**",
             "  **quote**        Display an inspirational quote",

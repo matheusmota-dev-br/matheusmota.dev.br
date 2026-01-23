@@ -33,3 +33,4 @@ export { HelpCommand } from './commands/help';
 export { WelcomeCommand } from './commands/welcome';
 export { EchoCommand } from './commands/echo';
 export { ClearCommand } from './commands/clear';
+export { BackCommand } from './commands/back';

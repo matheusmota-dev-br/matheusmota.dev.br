@@ -1,5 +1,5 @@
 import type { Command } from '../types';
-import { actions } from '@/actions';
+import { actions } from '@/lib';
 
 export class BooksCommand implements Command {
     async executeAsync(): Promise<string> {

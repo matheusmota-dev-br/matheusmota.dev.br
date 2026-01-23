@@ -27,8 +27,6 @@ export interface ShortenUrl {
     hash: string;
 };
 
-export const prerender = false;
-
 export const actions = {
     getLatestVersion: async () => {
         const response = await fetch(`/api/latest-version`);

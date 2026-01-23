@@ -25,6 +25,7 @@ import {
     CdCommand,
     PwdCommand,
     CatCommand,
+    BackCommand,
     getCurrentPath
 } from "./commands";
 
@@ -75,6 +76,7 @@ export function Terminal() {
     invoker.registerCommand("welcome", new WelcomeCommand());
     invoker.registerCommand("echo", new EchoCommand());
     invoker.registerCommand("clear", new ClearCommand());
+    invoker.registerCommand("back", new BackCommand());
 
     async function handleCommand(input: string) {
         const output = invoker.executeCommand(input);

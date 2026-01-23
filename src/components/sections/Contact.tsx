@@ -1,5 +1,5 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
-import { actions } from "@/actions";
+import { actions } from "@/lib";
 import cvData from "@/config/cv.json";
 
 export function Contact() {
