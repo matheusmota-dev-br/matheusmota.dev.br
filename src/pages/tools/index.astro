@@ -1,49 +1,30 @@
 ---
-import { getRelativeLocaleUrl } from "astro:i18n";
-
 import Layout from "@/layouts/Layout.astro";
 import Portfolio from "@/components/sections/Portfolio.astro";
-import {
-  defaultLang,
-  languages,
-  useTranslations,
-} from "@/hooks/use-translations";
+import toolsData from "@/config/tools.json";
 
-export function getStaticPaths() {
-  return languages.map((lang) => ({ params: { lang } }));
-}
-
-const { lang = defaultLang } = Astro.params;
-const t = useTranslations(lang);
-
-const projects = Object.keys(t("tools.projects")).map((key) => {
-  const tags = Object.keys(t(`tools.projects.${key}.tags`)).map((tag) =>
-    t(`tools.projects.${key}.tags.${tag}`),
-  );
-
-  return {
-    title: t(`tools.projects.${key}.title`),
-    description: t(`tools.projects.${key}.description`),
-    url: getRelativeLocaleUrl(lang, t(`tools.projects.${key}.url`)),
-    image: {
-      src: t(`tools.projects.${key}.image.src`),
-      alt: t(`tools.projects.${key}.image.alt`),
-    },
-    type: t(`tools.projects.${key}.type`),
-    tags,
-  };
-});
+const projects = toolsData.tools.map((tool) => ({
+  title: tool.title,
+  description: tool.description,
+  url: tool.url,
+  image: {
+    src: tool.image.src,
+    alt: tool.image.alt,
+  },
+  type: tool.type,
+  tags: tool.tags,
+}));
 ---
 
 <Layout
-  title={t("pages.tools.title")}
-  description={t("pages.tools.description")}
+  title="Tools"
+  description="A collection of tools that I use to make my life easier."
   image="/favicon.png"
 >
   <Portfolio
     section={{
-      name: t("pages.tools.title"),
-      description: t("pages.tools.description"),
+      name: "Tools",
+      description: "A collection of tools that I use to make my life easier.",
     }}
     projects={projects}
   />

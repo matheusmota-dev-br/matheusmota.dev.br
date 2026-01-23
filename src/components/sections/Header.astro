@@ -1,27 +1,20 @@
 ---
-import { getRelativeLocaleUrl } from "astro:i18n";
-
 import { Icon } from "astro-icon/components";
 import ThemeToggle from "@/components/ThemeToggle.astro";
-import { useTranslations } from "@/hooks/use-translations";
-import { getLangFromUrl } from "@/utils/get-lang-from-url";
-import LanguagePicker from "../LanguagePicker.astro";
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+import cvData from "@/config/cv.json";
 
 const menuItems = [
   {
-    name: t("pages.navigation.about"),
-    href: getRelativeLocaleUrl(lang, "/"),
+    name: "About",
+    href: "/",
   },
   {
-    name: t("pages.navigation.bio"),
-    href: getRelativeLocaleUrl(lang, "/bio"),
+    name: "Bio",
+    href: "/bio",
   },
   {
-    name: t("pages.navigation.tools"),
-    href: getRelativeLocaleUrl(lang, "/tools"),
+    name: "Tools",
+    href: "/tools",
   },
 ];
 ---
@@ -33,11 +26,11 @@ const menuItems = [
     <!-- Logo -->
     <div class="text-2xl font-bold">
       <a
-        href={getRelativeLocaleUrl(lang, "/")}
+        href="/"
         class="hover:text-offset flex flex-row"
       >
         <img class="w-10 h-10 flex mr-1" alt="logo" src="/favicon.png" />
-        {t("cv.basic.name")}
+        {cvData.basic.name}
       </a>
     </div>
 
@@ -45,7 +38,7 @@ const menuItems = [
       <!-- PC Menu -->
       <nav class="hidden sm:flex space-x-6 items-center">
         <a
-          href={getRelativeLocaleUrl(lang, "/terminal")}
+          href="/terminal"
           target="_blank"
           class="py-1 text-primary hover:bg-offset font-semi-bold"
           >{"</Terminal>"}</a
@@ -67,15 +60,13 @@ const menuItems = [
       </div>
 
       <ThemeToggle />
-
-      <LanguagePicker />
     </div>
   </div>
 
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden sm:hidden">
     <a
-      href={getRelativeLocaleUrl(lang, "/terminal")}
+      href="/terminal"
       target="_blank"
       class="block px-4 py-2 text-primary hover:bg-offset font-semi-bold"
       >{"</Terminal>"}</a

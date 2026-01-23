@@ -1,6 +1,5 @@
 ---
 import "../styles/index.css";
-import { getLangFromUrl } from "@/utils/get-lang-from-url";
 
 interface Props {
 	title: string;
@@ -9,12 +8,10 @@ interface Props {
 }
 
 const { title, description, image } = Astro.props;
-
-const lang = getLangFromUrl(Astro.url);
 ---
 
 <!doctype html>
-<html lang={lang} class="h-full" data-theme="light">
+<html lang="en" class="h-full" data-theme="light">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />

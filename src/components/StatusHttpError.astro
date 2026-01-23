@@ -1,10 +1,4 @@
 ---
-import { useTranslations } from "@/hooks/use-translations";
-import { getLangFromUrl } from "@/utils/get-lang-from-url";
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-
 type Props = {
   code: number;
   title: string;
@@ -26,7 +20,7 @@ const { code, title, description } = Astro.props;
       <button
         class="mt-5 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 rounded-lg shrink-0 sm:w-auto bg-primary hover:bg-secondary"
       >
-        {t("label.back_home")}
+        Back to home
       </button>
     </a>
   </div>

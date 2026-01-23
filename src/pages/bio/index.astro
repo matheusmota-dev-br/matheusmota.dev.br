@@ -1,41 +1,28 @@
 ---
-import { getRelativeLocaleUrl } from "astro:i18n";
-
 import { Icon } from "astro-icon/components";
 import LayoutBio from "@/layouts/LayoutBio.astro";
 import { Version } from "@/components/Version";
-import {
-  defaultLang,
-  languages,
-  useTranslations,
-} from "@/hooks/use-translations";
-
-export function getStaticPaths() {
-  return languages.map((lang) => ({ params: { lang } }));
-}
-
-const { lang = defaultLang } = Astro.params;
-const t = useTranslations(lang);
+import cvData from "@/config/cv.json";
 
 const today = new Date();
 const currentYear = today.getFullYear();
 
-const social = Object.keys(t("cv.social")).map((key) => t(`cv.social.${key}`));
+const social = cvData.social;
 ---
 
 <LayoutBio
-  title={t("cv.basic.name")}
-  description={t("cv.basic.summary")}
+  title={cvData.basic.name}
+  description={cvData.basic.summary}
   image="/profile.jpeg"
 >
   <header class="flex flex-col gap-2 items-center justify-center px-8 pt-8">
     <img
       class="rounded-full size-32"
-      alt={t("cv.basic.name")}
+      alt={cvData.basic.name}
       src="http://github.com/Matheus1714.png"
     />
-    <p class="text-2xl">{t("cv.basic.name")}</p>
-    <p class="">@{t("cv.basic.nickname")}</p>
+    <p class="text-2xl">{cvData.basic.name}</p>
+    <p class="">@{cvData.basic.nickname}</p>
   </header>
 
   <div class="flex justify-center relative my-8">
@@ -44,26 +31,26 @@ const social = Object.keys(t("cv.social")).map((key) => t(`cv.social.${key}`));
   </div>
 
   <main class="mx-8 flex flex-col gap-4 text-center">
-    <h3 class="text-xl font-semi-bold">{t("label.personal")}</h3>
+    <h3 class="text-xl font-semi-bold">Personal</h3>
     <ul class="flex flex-col items-center gap-2">
       <li class="w-full md:w-96">
         <a
-          href={getRelativeLocaleUrl(lang, "/")}
-          title={t("label.portifolio")}
+          href="/"
+          title="Portifolio"
           class="px-10 py-4 text-base text-center
                         font-semibold transition-all duration-200 rounded
                         bg-primary hover:scale-110 focus:bg-secondary text-white
                         flex flex-row gap-2 justify-center items-center relative"
           role="button"
         >
-          {t("label.portifolio")}
+          Portifolio
         </a>
       </li>
 
       <li class="w-full md:w-96">
         <a
-          href={t("cv.basic.cv_link")}
-          title={t("label.cv")}
+          href={cvData.basic.cv_link}
+          title="CV"
           target="_blank"
           class="px-10 py-4 text-base text-center
                         font-semibold transition-all duration-200 rounded
@@ -71,12 +58,12 @@ const social = Object.keys(t("cv.social")).map((key) => t(`cv.social.${key}`));
                         flex flex-row gap-2 justify-center items-center relative"
           role="button"
         >
-          {t("label.cv")}
+          CV
         </a>
       </li>
     </ul>
 
-    <h3 class="text-xl font-semi-bold">{t("label.social")}</h3>
+    <h3 class="text-xl font-semi-bold">Social</h3>
     <ul class="flex flex-col items-center gap-2">
       {
         social.map((s) => (
@@ -117,7 +104,7 @@ const social = Object.keys(t("cv.social")).map((key) => t(`cv.social.${key}`));
     >
     <p class="text-sm">
       © {currentYear}
-      {t("cv.basic.name")}. {t("pages.footer.right")}
+      {cvData.basic.name}. All Rights Reserved.
     </p>
   </footer>
 </LayoutBio>

@@ -1,27 +1,18 @@
 ---
-import { getRelativeLocaleUrl } from "astro:i18n";
-
 import { Icon } from "astro-icon/components";
 import { Version } from "@/components/Version";
-import { useTranslations } from "@/hooks/use-translations";
-import { getLangFromUrl } from "@/utils/get-lang-from-url";
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+import cvData from "@/config/cv.json";
 
 const today = new Date();
 const currentYear = today.getFullYear();
 
 const pages = [
-  { name: t("pages.navigation.about"), href: getRelativeLocaleUrl(lang, "/") },
-  { name: t("pages.navigation.bio"), href: getRelativeLocaleUrl(lang, "/bio") },
-  {
-    name: t("pages.navigation.tools"),
-    href: getRelativeLocaleUrl(lang, "/tools"),
-  },
+  { name: "About", href: "/" },
+  { name: "Bio", href: "/bio" },
+  { name: "Tools", href: "/tools" },
 ];
 
-const social = Object.keys(t("cv.social")).map((key) => t(`cv.social.${key}`));
+const social = cvData.social;
 ---
 
 <section class="py-10 mt-4">
@@ -39,7 +30,7 @@ const social = Object.keys(t("cv.social")).map((key) => t(`cv.social.${key}`));
         </div>
         <p class="mt-5 text-sm xl:ml-6 xl:mt-0">
           © {currentYear}
-          {t("cv.basic.name")}. {t("pages.footer.right")}
+          {cvData.basic.name}. All Rights Reserved.
         </p>
       </div>
 

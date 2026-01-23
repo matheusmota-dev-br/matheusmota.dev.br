@@ -1,13 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
-import { useTranslations } from "@/hooks/use-translations";
-import { getLangFromUrl } from "@/utils/get-lang-from-url";
+import cvData from "@/config/cv.json";
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-
-const skills = Object.keys(t("cv.skills")).map((key) => t(`cv.skills.${key}`));
-const social = Object.keys(t("cv.social")).map((key) => t(`cv.social.${key}`));
+const skills = cvData.basic.skills;
+const social = cvData.social;
 ---
 
 <section class="py-5 px-4 sm:py-10 lg:py-16">
@@ -31,15 +27,15 @@ const social = Object.keys(t("cv.social")).map((key) => t(`cv.social.${key}`));
               <img
                 class="w-full h-full object-cover rounded-xl"
                 src="/profile.jpeg"
-                alt={t("cv.basic.name")}
+                alt={cvData.basic.name}
               />
             </div>
             <div
               class="flip-card-back absolute inset-0 bg-offset flex items-center justify-center text-lg font-bold rounded-xl select-none"
             >
               <div class="mx-4">
-                <i>{t("cv.basic.phrase.text")}</i>
-                <p class="mt-4">{t("cv.basic.phrase.author")}</p>
+                <i>{cvData.phrase.text}</i>
+                <p class="mt-4">{cvData.phrase.author}</p>
               </div>
             </div>
           </div>
@@ -48,11 +44,11 @@ const social = Object.keys(t("cv.social")).map((key) => t(`cv.social.${key}`));
 
       <div>
         <p class="text-lg text-offset">
-          {t("cv.basic.job")}
+          {cvData.basic.job}
         </p>
 
         <h1 class="text-2xl font-bold sm:text-4xl lg:text-5xl mt-3 relative">
-          {t("cv.basic.name")}
+          {cvData.basic.name}
           <span class="relative inline-block ml-2">
             <span class="w-1 h-6 bg-primary absolute bottom-0 left-0"></span>
           </span>
@@ -69,12 +65,12 @@ const social = Object.keys(t("cv.social")).map((key) => t(`cv.social.${key}`));
         </ul>
 
         <p class="mt-5 text-base sm:text-xl">
-          {t("cv.basic.summary")}
+          {cvData.basic.summary}
         </p>
 
         <div class="mt-10 flex flex-col gap-2">
           <a
-            href={`${t("cv.basic.cv_link")}/export?format=pdf`}
+            href={`${cvData.basic.cv_link}/export?format=pdf`}
             title="Download CV"
             download
             class="px-10 py-4 text-base text-white text-center
@@ -82,11 +78,11 @@ const social = Object.keys(t("cv.social")).map((key) => t(`cv.social.${key}`));
                             bg-primary hover:scale-110 focus:bg-secondary"
             role="button"
           >
-            {t("pages.home.sections.hero.cv_download")}
+            Download CV
           </a>
 
           <a
-            href={t("cv.basic.cv_link")}
+            href={cvData.basic.cv_link}
             title="CV Online"
             target="_blank"
             class="px-10 py-4 text-base text-center
@@ -94,7 +90,7 @@ const social = Object.keys(t("cv.social")).map((key) => t(`cv.social.${key}`));
                             border-2 border-primary hover:scale-110 focus:bg-secondary"
             role="button"
           >
-            {t("pages.home.sections.hero.cv_link")}
+            Online CV
           </a>
         </div>
 
