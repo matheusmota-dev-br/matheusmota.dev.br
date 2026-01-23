@@ -20,17 +20,24 @@ import {
     ToolsCommand,
     QuoteCommand,
     BooksCommand,
-    ColorsCommand
+    ColorsCommand,
+    LsCommand,
+    CdCommand,
+    PwdCommand,
+    CatCommand,
+    getCurrentPath
 } from "./commands";
 
 import { transformMarkdown } from "./transform-markdown";
 import { keydownReducer, type Keydown } from "./keydown-reducer";
 
 export function Terminal() {
-    const bash = '[math-term:~$]';
+    const [currentPath, setCurrentPath] = useState('~');
 
     const [output, setOutput] = useState<React.ReactNode[]>([]);
     const [isLoading, setIsLoading] = useState(false);
+
+    const getBash = () => `[math-term:${currentPath}$]`;
 
     const [state, dispatch] = useReducer(keydownReducer, {
         prev: "",
@@ -60,6 +67,10 @@ export function Terminal() {
     invoker.registerCommand("quote", new QuoteCommand());
     invoker.registerCommand("books", new BooksCommand());
     invoker.registerCommand("colors", new ColorsCommand());
+    invoker.registerCommand("ls", new LsCommand());
+    invoker.registerCommand("cd", new CdCommand());
+    invoker.registerCommand("pwd", new PwdCommand());
+    invoker.registerCommand("cat", new CatCommand());
     invoker.registerCommand("help", new HelpCommand());
     invoker.registerCommand("welcome", new WelcomeCommand());
     invoker.registerCommand("echo", new EchoCommand());
@@ -73,6 +84,18 @@ export function Terminal() {
         if (input === 'clear') {
             setOutput([]);
             return;
+        }
+
+        // Update path after cd command (even if it fails, to show error)
+        if (input.startsWith('cd ')) {
+            setCurrentPath(getCurrentPath());
+            // If cd succeeded (empty output), don't show anything
+            if (output === "") {
+                return;
+            }
+        } else {
+            // Update path for other commands that might change directory
+            setCurrentPath(getCurrentPath());
         }
 
         // Handle async commands (like books)
@@ -89,7 +112,8 @@ export function Terminal() {
             } finally {
                 setIsLoading(false);
             }
-        } else {
+        } else if (output !== "") {
+            // Only append output if it's not empty (cd returns empty on success)
             appendOutput(input, transformMarkdown(output));
         }
     }
@@ -130,7 +154,7 @@ export function Terminal() {
         setOutput((prev) => [
             ...prev,
             <pre className="flex">
-                <p className="font-bold text-primary">{bash}</p>&nbsp;<br />
+                <p className="font-bold text-primary">{getBash()}</p>&nbsp;<br />
                 <p>{command}</p>
             </pre>,
             <br />,
@@ -169,6 +193,9 @@ export function Terminal() {
         const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
         setIsMobile(isTouchDevice);
 
+        // Initialize current path
+        setCurrentPath(getCurrentPath());
+
         handleCommand("welcome");
 
         const focusTextarea = (event: MouseEvent) => {
@@ -196,7 +223,7 @@ export function Terminal() {
                 className="flex items-center"
                 ref={commandRef}
             >
-                <p className="font-bold text-primary font-mono">{bash}</p>&nbsp;
+                <p className="font-bold text-primary font-mono">{getBash()}</p>&nbsp;
                 {isLoading ? (
                     <>
                         <span className="text-text-offset">Loading books...</span>
