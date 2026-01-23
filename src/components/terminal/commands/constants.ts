@@ -12,6 +12,5 @@ export const pages = [
     { name: "Bio", href: "/bio" },
     { name: "Tools", href: "/tools" },
     { name: "Books", href: "/books" },
-    { name: "Terminal", href: "/terminal" },
     { name: "Academic - Master", href: "/academic/master" },
 ];
