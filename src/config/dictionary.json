@@ -1,13 +1,1049 @@
 {
-  "tech": [
+  "words": [
     {
-      "title": "Today I Learned (TIL)",
-      "related": [
-        "TIL",
-        "Today I Learned"
-      ],
+      "id": "vue",
+      "name": "Vue",
+      "similar": ["vue", "vue3", "vuejs", "vue.js", "vue3js"],
+      "phonetic": "/vjuː θriː dʒeɪ ɛs/",
+      "definition": "A progressive JavaScript framework for building user interfaces, version 3",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=nhBVL41-_Cw",
+        "type": "youtube"
+      },
       "descriptions": [
-        "A commonly used way for developers to report daily learnings."
+        "Vue.js is a progressive framework for building user interfaces.",
+        "Vue 3 introduced the Composition API, improved performance, and better TypeScript support.",
+        "It uses a component-based architecture similar to React but with a simpler learning curve."
+      ],
+      "references": [
+        {
+          "id": "official-website-vue3js",
+          "name": "Official Website",
+          "url": "https://vuejs.org/"
+        },
+        {
+          "id": "pronunciation-vue3js",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/vue/"
+        }
+      ]
+    },
+    {
+      "id": "react",
+      "name": "React",
+      "similar": ["react", "reactjs", "react.js", "reactjs"],
+      "phonetic": "/riːˈækt/",
+      "definition": "A JavaScript library for building user interfaces, particularly web applications",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=Tn6-PIqc4UM",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "React is a declarative, efficient, and flexible JavaScript library for building user interfaces.",
+        "It allows developers to create reusable UI components and manage application state efficiently.",
+        "React uses a virtual DOM to optimize rendering performance."
+      ],
+      "references": [
+        {
+          "id": "official-website-react",
+          "name": "Official Website",
+          "url": "https://react.dev/"
+        },
+        {
+          "id": "documentation-react",
+          "name": "Documentation",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "id": "pronunciation-react",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/react/"
+        }
+      ]
+    },
+    {
+      "id": "typescript",
+      "name": "TypeScript",
+      "similar": ["typescript", "ts", "tsx"],
+      "phonetic": "/ˈtaɪpˌskrɪpt/",
+      "definition": "A typed superset of JavaScript that compiles to plain JavaScript",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=ahCwqrYpIuM",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "TypeScript adds static type definitions to JavaScript, improving code quality and maintainability.",
+        "It provides better IDE support, early error detection, and enhanced code documentation.",
+        "TypeScript code is transpiled to JavaScript, making it compatible with any JavaScript runtime."
+      ],
+      "references": [
+        {
+          "id": "official-website-typescript",
+          "name": "Official Website",
+          "url": "https://www.typescriptlang.org/"
+        },
+        {
+          "id": "documentation-typescript",
+          "name": "Documentation",
+          "url": "https://www.typescriptlang.org/docs/"
+        },
+        {
+          "id": "pronunciation-typescript",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/typescript/"
+        }
+      ]
+    },
+    {
+      "id": "node",
+      "name": "NodeJS",
+      "similar": ["node", "nodejs", "node.js"],
+      "phonetic": "/noʊd dʒeɪ ɛs/",
+      "definition": "A JavaScript runtime built on Chrome's V8 JavaScript engine",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=TlB_eWDSMt4",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "Node.js enables JavaScript to run on the server-side, outside of web browsers.",
+        "It uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.",
+        "Node.js has a large ecosystem of packages available through npm (Node Package Manager)."
+      ],
+      "references": [
+        {
+          "id": "official-website-nodejs",
+          "name": "Official Website",
+          "url": "https://nodejs.org/"
+        },
+        {
+          "id": "documentation-nodejs",
+          "name": "Documentation",
+          "url": "https://nodejs.org/docs/"
+        },
+        {
+          "id": "pronunciation-nodejs",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/nodejs/"
+        }
+      ]
+    },
+    {
+      "id": "nextjs",
+      "name": "NextJS",
+      "similar": ["nextjs", "next.js", "next"],
+      "phonetic": "/nekst dʒeɪ ɛs/",
+      "definition": "A React framework for production with server-side rendering and static site generation",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=Sklc_fQBmcs",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "Next.js is a React framework that enables server-side rendering and static site generation.",
+        "It provides features like automatic code splitting, optimized performance, and simplified deployment.",
+        "Next.js supports both static and dynamic routing, API routes, and image optimization."
+      ],
+      "references": [
+        {
+          "id": "official-website-nextjs",
+          "name": "Official Website",
+          "url": "https://nextjs.org/"
+        },
+        {
+          "id": "documentation-nextjs",
+          "name": "Documentation",
+          "url": "https://nextjs.org/docs"
+        },
+        {
+          "id": "pronunciation-nextjs",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/nextjs/"
+        }
+      ]
+    },
+    {
+      "id": "nuxtjs",
+      "name": "NuxtJS",
+      "similar": ["nuxtjs", "nuxt.js", "nuxt"],
+      "phonetic": "/nʌkst dʒeɪ ɛs/",
+      "definition": "A Vue.js framework for building modern web applications",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=kmfq-pCgXqI",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "Nuxt.js is a framework built on top of Vue.js that simplifies the development of universal applications.",
+        "It provides server-side rendering, static site generation, and automatic code splitting.",
+        "Nuxt.js includes conventions and best practices to help developers build scalable applications."
+      ],
+      "references": [
+        {
+          "id": "official-website-nuxtjs",
+          "name": "Official Website",
+          "url": "https://nuxt.com/"
+        },
+        {
+          "id": "documentation-nuxtjs",
+          "name": "Documentation",
+          "url": "https://nuxt.com/docs"
+        },
+        {
+          "id": "pronunciation-nuxtjs",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/nuxtjs/"
+        }
+      ]
+    },
+    {
+      "id": "nestjs",
+      "name": "NestJS",
+      "similar": ["nestjs", "nest.js", "nest"],
+      "phonetic": "/nest dʒeɪ ɛs/",
+      "definition": "A progressive Node.js framework for building efficient and scalable server-side applications",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=GHTA143_b-s",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "NestJS is a framework for building efficient, reliable, and scalable server-side applications.",
+        "It uses TypeScript and is built with Express or Fastify under the hood.",
+        "NestJS provides a modular architecture inspired by Angular, making it easy to organize and maintain code."
+      ],
+      "references": [
+        {
+          "id": "official-website-nestjs",
+          "name": "Official Website",
+          "url": "https://nestjs.com/"
+        },
+        {
+          "id": "documentation-nestjs",
+          "name": "Documentation",
+          "url": "https://docs.nestjs.com/"
+        },
+        {
+          "id": "pronunciation-nestjs",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/nestjs/"
+        }
+      ]
+    },
+    {
+      "id": "postgresql",
+      "name": "PostgreSQL",
+      "similar": ["postgresql", "postgres", "pg"],
+      "phonetic": "/poʊstˈɡrɛs kjuː ɛl/",
+      "definition": "An advanced open-source relational database management system",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=fZQI7nBu32M",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "PostgreSQL is a powerful, open-source object-relational database system.",
+        "It supports SQL and JSON querying, ACID transactions, and has extensive features for data integrity.",
+        "PostgreSQL is known for its reliability, feature robustness, and performance."
+      ],
+      "references": [
+        {
+          "id": "official-website-postgresql",
+          "name": "Official Website",
+          "url": "https://www.postgresql.org/"
+        },
+        {
+          "id": "documentation-postgresql",
+          "name": "Documentation",
+          "url": "https://www.postgresql.org/docs/"
+        },
+        {
+          "id": "pronunciation-postgresql",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/postgresql/"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "similar": ["python", "py", "python3"],
+      "phonetic": "/ˈpaɪθən/",
+      "definition": "A high-level, interpreted programming language known for its simplicity and readability",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=kqtD5dpn9C8",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "Python is a versatile programming language used for web development, data science, AI, and automation.",
+        "It emphasizes code readability and simplicity, making it an excellent choice for beginners.",
+        "Python has a vast ecosystem of libraries and frameworks, such as Django, Flask, and NumPy."
+      ],
+      "references": [
+        {
+          "id": "official-website-python",
+          "name": "Official Website",
+          "url": "https://www.python.org/"
+        },
+        {
+          "id": "documentation-python",
+          "name": "Documentation",
+          "url": "https://docs.python.org/"
+        },
+        {
+          "id": "pronunciation-python",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/python/"
+        }
+      ]
+    },
+    {
+      "id": "django",
+      "name": "Django",
+      "similar": ["django", "djangoframework"],
+      "phonetic": "/ˈdʒæŋɡoʊ/",
+      "definition": "A high-level Python web framework that encourages rapid development and clean design",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=rHux0fM0S9s",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "Django is a Python web framework that follows the 'batteries-included' philosophy.",
+        "It provides an admin interface, ORM, authentication, and many other features out of the box.",
+        "Django is designed to help developers build complex, database-driven websites quickly."
+      ],
+      "references": [
+        {
+          "id": "official-website-django",
+          "name": "Official Website",
+          "url": "https://www.djangoproject.com/"
+        },
+        {
+          "id": "documentation-django",
+          "name": "Documentation",
+          "url": "https://docs.djangoproject.com/"
+        },
+        {
+          "id": "pronunciation-django",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/django/"
+        }
+      ]
+    },
+    {
+      "id": "temporalio",
+      "name": "TemporalIO",
+      "similar": ["temporalio", "temporal", "temporal.io"],
+      "phonetic": "/ˈtempərəl aɪ oʊ/",
+      "definition": "A durable execution platform for building reliable distributed applications",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=fAT9zQq2qZ0",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "Temporal is a workflow orchestration platform that makes it easy to build reliable applications.",
+        "It provides durable execution, allowing workflows to survive failures and retries automatically.",
+        "Temporal is particularly useful for microservices, background jobs, and long-running processes."
+      ],
+      "references": [
+        {
+          "id": "official-website-temporalio",
+          "name": "Official Website",
+          "url": "https://temporal.io/"
+        },
+        {
+          "id": "documentation-temporalio",
+          "name": "Documentation",
+          "url": "https://docs.temporal.io/"
+        },
+        {
+          "id": "pronunciation-temporalio",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/temporal/"
+        }
+      ]
+    },
+    {
+      "id": "fastapi",
+      "name": "FastAPI",
+      "similar": ["fastapi", "fast-api", "fast api"],
+      "phonetic": "/fæst eɪ piː aɪ/",
+      "definition": "A modern, fast web framework for building APIs with Python based on standard Python type hints",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=0dz8c3p_3CY",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "FastAPI is a modern web framework for building APIs with Python 3.7+.",
+        "It's built on top of Starlette and Pydantic, providing high performance and automatic API documentation.",
+        "FastAPI supports async/await, automatic data validation, and OpenAPI schema generation."
+      ],
+      "references": [
+        {
+          "id": "official-website-fastapi",
+          "name": "Official Website",
+          "url": "https://fastapi.tiangolo.com/"
+        },
+        {
+          "id": "documentation-fastapi",
+          "name": "Documentation",
+          "url": "https://fastapi.tiangolo.com/docs/"
+        },
+        {
+          "id": "pronunciation-fastapi",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/fastapi/"
+        }
+      ]
+    },
+    {
+      "id": "docker",
+      "name": "Docker",
+      "similar": ["docker", "docker-container", "dockerize"],
+      "phonetic": "/ˈdɒkər/",
+      "definition": "A platform for developing, shipping, and running applications using containerization",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=fqMOX6JJhGo",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "Docker is a containerization platform that packages applications and their dependencies into containers.",
+        "Containers are lightweight, portable, and ensure consistent environments across different systems.",
+        "Docker simplifies deployment, scaling, and management of applications."
+      ],
+      "references": [
+        {
+          "id": "official-website-docker",
+          "name": "Official Website",
+          "url": "https://www.docker.com/"
+        },
+        {
+          "id": "documentation-docker",
+          "name": "Documentation",
+          "url": "https://docs.docker.com/"
+        },
+        {
+          "id": "pronunciation-docker",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/docker/"
+        }
+      ]
+    },
+    {
+      "id": "gcp",
+      "name": "Google Cloud Platform (GCP)",
+      "similar": ["gcp", "google cloud", "google cloud platform"],
+      "phonetic": "/ˈɡuːɡəl klaʊd ˈplætfɔːrm/",
+      "definition": "A suite of cloud computing services provided by Google",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=U3Rlm8v8nYU",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "Google Cloud Platform is a collection of cloud computing services that run on Google's infrastructure.",
+        "It provides services for computing, storage, databases, networking, machine learning, and more.",
+        "GCP competes with AWS and Azure in the cloud computing market."
+      ],
+      "references": [
+        {
+          "id": "official-website-gcp",
+          "name": "Official Website",
+          "url": "https://cloud.google.com/"
+        },
+        {
+          "id": "documentation-gcp",
+          "name": "Documentation",
+          "url": "https://cloud.google.com/docs"
+        },
+        {
+          "id": "pronunciation-gcp",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/google%20cloud/"
+        }
+      ]
+    },
+    {
+      "id": "flutter",
+      "name": "Flutter",
+      "similar": ["flutter", "flutter-framework", "flutter-app"],
+      "phonetic": "/ˈflʌtər/",
+      "definition": "A UI toolkit for building natively compiled applications for mobile, web, and desktop",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=1ukSR1GRtMU",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "Flutter is Google's UI toolkit for building beautiful, natively compiled applications.",
+        "It allows developers to write one codebase that runs on iOS, Android, web, and desktop.",
+        "Flutter uses the Dart programming language and provides a rich set of pre-built widgets."
+      ],
+      "references": [
+        {
+          "id": "official-website-flutter",
+          "name": "Official Website",
+          "url": "https://flutter.dev/"
+        },
+        {
+          "id": "documentation-flutter",
+          "name": "Documentation",
+          "url": "https://docs.flutter.dev/"
+        },
+        {
+          "id": "pronunciation-flutter",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/flutter/"
+        }
+      ]
+    },
+    {
+      "id": "dart",
+      "name": "Dart",
+      "similar": ["dart", "dart-lang", "dart-language"],
+      "phonetic": "/dɑːrt/",
+      "definition": "A client-optimized programming language for fast apps on any platform",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=5F-6n_2XWR8",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "Dart is a programming language developed by Google, primarily used for Flutter development.",
+        "It's designed for building mobile, desktop, server, and web applications.",
+        "Dart supports both just-in-time (JIT) and ahead-of-time (AOT) compilation."
+      ],
+      "references": [
+        {
+          "id": "official-website-dart",
+          "name": "Official Website",
+          "url": "https://dart.dev/"
+        },
+        {
+          "id": "documentation-dart",
+          "name": "Documentation",
+          "url": "https://dart.dev/guides"
+        },
+        {
+          "id": "pronunciation-dart",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/dart/"
+        }
+      ]
+    },
+    {
+      "id": "drift",
+      "name": "Drift",
+      "similar": ["drift", "drift-database", "drift-orm"],
+      "phonetic": "/drɪft/",
+      "definition": "A reactive persistence library for Dart and Flutter, built on top of SQLite",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=ZJ0yj2szX9E",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "Drift is a reactive persistence library for Dart and Flutter applications.",
+        "It provides a type-safe, reactive API for working with SQLite databases.",
+        "Drift generates type-safe code from SQL queries and database schemas."
+      ],
+      "references": [
+        {
+          "id": "official-website-drift",
+          "name": "Official Website",
+          "url": "https://drift.simonbinder.eu/"
+        },
+        {
+          "id": "documentation-drift",
+          "name": "Documentation",
+          "url": "https://drift.simonbinder.eu/docs/getting-started/"
+        },
+        {
+          "id": "pronunciation-drift",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/drift/"
+        }
+      ]
+    },
+    {
+      "id": "keycloak",
+      "name": "Keycloak",
+      "similar": ["keycloak", "keycloak-sso", "keycloak-iam"],
+      "phonetic": "/ˈkiːkloʊk/",
+      "definition": "An open-source identity and access management solution",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=GZvSY5kL-58",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "Keycloak is an open-source identity and access management solution.",
+        "It provides single sign-on (SSO), social login, user federation, and fine-grained authorization.",
+        "Keycloak supports standards like OpenID Connect, OAuth 2.0, and SAML."
+      ],
+      "references": [
+        {
+          "id": "official-website-keycloak",
+          "name": "Official Website",
+          "url": "https://www.keycloak.org/"
+        },
+        {
+          "id": "documentation-keycloak",
+          "name": "Documentation",
+          "url": "https://www.keycloak.org/documentation"
+        },
+        {
+          "id": "pronunciation-keycloak",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/keycloak/"
+        }
+      ]
+    },
+    {
+      "id": "selenium",
+      "name": "Selenium",
+      "similar": ["selenium", "selenium-webdriver", "selenium-automation"],
+      "phonetic": "/sɪˈliːniəm/",
+      "definition": "A suite of tools for automating web browsers",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=zjo9yFHoUl8",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "Selenium is an open-source tool suite for automating web browsers.",
+        "It's commonly used for web application testing, web scraping, and browser automation.",
+        "Selenium supports multiple programming languages and browsers."
+      ],
+      "references": [
+        {
+          "id": "official-website-selenium",
+          "name": "Official Website",
+          "url": "https://www.selenium.dev/"
+        },
+        {
+          "id": "documentation-selenium",
+          "name": "Documentation",
+          "url": "https://www.selenium.dev/documentation/"
+        },
+        {
+          "id": "pronunciation-selenium",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/selenium/"
+        }
+      ]
+    },
+    {
+      "id": "mss",
+      "name": "Microsoft SQL Server",
+      "similar": ["mss", "mssql", "sql-server", "microsoft-sql-server"],
+      "phonetic": "/ˈmaɪkrəˌsɒft ɛs kjuː ˈsɜːrvər/",
+      "definition": "A relational database management system developed by Microsoft",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=7GVFYt6_ZFM",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "Microsoft SQL Server is a relational database management system (RDBMS) developed by Microsoft.",
+        "It supports transaction processing, business intelligence, and analytics applications.",
+        "SQL Server runs on Windows and Linux and integrates with Microsoft's ecosystem."
+      ],
+      "references": [
+        {
+          "id": "official-website-mss",
+          "name": "Official Website",
+          "url": "https://www.microsoft.com/en-us/sql-server"
+        },
+        {
+          "id": "documentation-mss",
+          "name": "Documentation",
+          "url": "https://docs.microsoft.com/en-us/sql/"
+        },
+        {
+          "id": "pronunciation-mss",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/sql%20server/"
+        }
+      ]
+    },
+    {
+      "id": "javascript",
+      "name": "Javascript",
+      "similar": ["javascript", "js", "ecmascript"],
+      "phonetic": "/ˈdʒɑːvəˌskrɪpt/",
+      "definition": "A high-level, interpreted programming language that is one of the core technologies of the web",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=W6NZfCO5SIk",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "JavaScript is a programming language that enables interactive web pages and is essential for web development.",
+        "It's supported by all modern web browsers and can be used for both client-side and server-side development.",
+        "JavaScript is dynamically typed and supports multiple programming paradigms."
+      ],
+      "references": [
+        {
+          "id": "official-website-javascript",
+          "name": "MDN Web Docs",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+        },
+        {
+          "id": "documentation-javascript",
+          "name": "ECMAScript Specification",
+          "url": "https://www.ecma-international.org/publications-and-standards/standards/ecma-262/"
+        },
+        {
+          "id": "pronunciation-javascript",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/javascript/"
+        }
+      ]
+    },
+    {
+      "id": "vb",
+      "name": "Virtual Box",
+      "similar": ["vb", "virtualbox", "virtual-box", "oracle-virtualbox"],
+      "phonetic": "/ˈvɜːrtʃuəl bɒks/",
+      "definition": "A free and open-source hosted hypervisor for x86 virtualization",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=wX75Z-4MEoM",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "VirtualBox is a virtualization software that allows you to run multiple operating systems on a single machine.",
+        "It's useful for testing, development, and running legacy applications.",
+        "VirtualBox supports Windows, Linux, macOS, and other guest operating systems."
+      ],
+      "references": [
+        {
+          "id": "official-website-vb",
+          "name": "Official Website",
+          "url": "https://www.virtualbox.org/"
+        },
+        {
+          "id": "documentation-vb",
+          "name": "Documentation",
+          "url": "https://www.virtualbox.org/manual/"
+        },
+        {
+          "id": "pronunciation-vb",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/virtualbox/"
+        }
+      ]
+    },
+    {
+      "id": "mqtt",
+      "name": "MQTT",
+      "similar": ["mqtt", "mqtt-protocol", "message-queue-telemetry-transport"],
+      "phonetic": "/ɛm kjuː tiː tiː/",
+      "definition": "A lightweight messaging protocol for IoT and low-bandwidth networks",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=EIxdz-2rhLs",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "MQTT (Message Queuing Telemetry Transport) is a lightweight messaging protocol.",
+        "It's designed for IoT devices and networks with limited bandwidth or unreliable connections.",
+        "MQTT uses a publish-subscribe messaging pattern and is widely used in IoT applications."
+      ],
+      "references": [
+        {
+          "id": "official-website-mqtt",
+          "name": "MQTT.org",
+          "url": "https://mqtt.org/"
+        },
+        {
+          "id": "documentation-mqtt",
+          "name": "MQTT Specification",
+          "url": "https://mqtt.org/mqtt-specification/"
+        },
+        {
+          "id": "pronunciation-mqtt",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/mqtt/"
+        }
+      ]
+    },
+    {
+      "id": "sao",
+      "name": "SAO",
+      "similar": ["sao", "soa", "service-oriented-architecture"],
+      "phonetic": "/ɛs eɪ oʊ/",
+      "definition": "Service-Oriented Architecture - a software design approach where services are provided to other components",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=2jqI0233T3Q",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "Service-Oriented Architecture (SOA) is a software design approach.",
+        "It structures applications as a collection of loosely coupled, interoperable services.",
+        "SOA enables better integration, reusability, and scalability of software systems."
+      ],
+      "references": [
+        {
+          "id": "documentation-sao",
+          "name": "SOA Overview",
+          "url": "https://www.oracle.com/cloud/architecture/soa-overview.html"
+        },
+        {
+          "id": "pronunciation-sao",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/soa/"
+        }
+      ]
+    },
+    {
+      "id": "firebase",
+      "name": "Firebase",
+      "similar": ["firebase", "firebase-google", "google-firebase"],
+      "phonetic": "/ˈfaɪərbeɪs/",
+      "definition": "A platform developed by Google for creating mobile and web applications",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=9kRgVxULbag",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "Firebase is a platform that provides backend services for mobile and web applications.",
+        "It offers services like authentication, real-time database, cloud storage, and hosting.",
+        "Firebase eliminates the need for backend infrastructure, allowing developers to focus on frontend development."
+      ],
+      "references": [
+        {
+          "id": "official-website-firebase",
+          "name": "Official Website",
+          "url": "https://firebase.google.com/"
+        },
+        {
+          "id": "documentation-firebase",
+          "name": "Documentation",
+          "url": "https://firebase.google.com/docs"
+        },
+        {
+          "id": "pronunciation-firebase",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/firebase/"
+        }
+      ]
+    },
+    {
+      "id": "react-native",
+      "name": "React Native",
+      "similar": ["react-native", "reactnative", "rn"],
+      "phonetic": "/riːˈækt ˈneɪtɪv/",
+      "definition": "A framework for building native mobile applications using React",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=0-S5a0eXPoc",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "React Native is a framework for building native mobile apps using React and JavaScript.",
+        "It allows developers to write one codebase that runs on both iOS and Android.",
+        "React Native provides access to native platform APIs and components."
+      ],
+      "references": [
+        {
+          "id": "official-website-react-native",
+          "name": "Official Website",
+          "url": "https://reactnative.dev/"
+        },
+        {
+          "id": "documentation-react-native",
+          "name": "Documentation",
+          "url": "https://reactnative.dev/docs/getting-started"
+        },
+        {
+          "id": "pronunciation-react-native",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/react%20native/"
+        }
+      ]
+    },
+    {
+      "id": "material-ui",
+      "name": "Material UI",
+      "similar": ["material-ui", "mui", "material-design"],
+      "phonetic": "/məˈtɪriəl juː aɪ/",
+      "definition": "A popular React UI framework that implements Google's Material Design",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=pfm0NMO2m48",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "Material-UI (MUI) is a React component library that implements Google's Material Design.",
+        "It provides a comprehensive set of pre-built components for building user interfaces.",
+        "Material-UI is customizable, accessible, and follows Material Design principles."
+      ],
+      "references": [
+        {
+          "id": "official-website-material-ui",
+          "name": "Official Website",
+          "url": "https://mui.com/"
+        },
+        {
+          "id": "documentation-material-ui",
+          "name": "Documentation",
+          "url": "https://mui.com/getting-started/"
+        },
+        {
+          "id": "pronunciation-material-ui",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/material%20ui/"
+        }
+      ]
+    },
+    {
+      "id": "flask",
+      "name": "Flask",
+      "similar": ["flask", "flask-framework", "flask-python"],
+      "phonetic": "/flæsk/",
+      "definition": "A lightweight Python web framework for building web applications",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=Z1RJmh_OqeA",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "Flask is a micro web framework for Python that's lightweight and flexible.",
+        "It provides the essentials for web development without imposing too many dependencies.",
+        "Flask is easy to learn and is great for small to medium-sized applications."
+      ],
+      "references": [
+        {
+          "id": "official-website-flask",
+          "name": "Official Website",
+          "url": "https://flask.palletsprojects.com/"
+        },
+        {
+          "id": "documentation-flask",
+          "name": "Documentation",
+          "url": "https://flask.palletsprojects.com/docs/"
+        },
+        {
+          "id": "pronunciation-flask",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/flask/"
+        }
+      ]
+    },
+    {
+      "id": "html",
+      "name": "HTML",
+      "similar": ["html", "html5", "hypertext-markup-language"],
+      "phonetic": "/eɪtʃ tiː ɛm ɛl/",
+      "definition": "HyperText Markup Language - the standard markup language for creating web pages",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=UB1O30fR-EE",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "HTML (HyperText Markup Language) is the standard markup language for creating web pages.",
+        "It structures content on the web and is the foundation of all websites.",
+        "HTML uses tags to define elements like headings, paragraphs, links, and images."
+      ],
+      "references": [
+        {
+          "id": "official-website-html",
+          "name": "MDN Web Docs",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML"
+        },
+        {
+          "id": "documentation-html",
+          "name": "HTML Specification",
+          "url": "https://html.spec.whatwg.org/"
+        },
+        {
+          "id": "pronunciation-html",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/html/"
+        }
+      ]
+    },
+    {
+      "id": "css",
+      "name": "CSS",
+      "similar": ["css", "css3", "cascading-style-sheets"],
+      "phonetic": "/siː ɛs ɛs/",
+      "definition": "Cascading Style Sheets - a stylesheet language used for describing the presentation of HTML documents",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=1Rs2ND1ryYc",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "CSS (Cascading Style Sheets) is used to style and layout web pages.",
+        "It controls the appearance of HTML elements, including colors, fonts, spacing, and layout.",
+        "CSS allows for responsive design and separation of content from presentation."
+      ],
+      "references": [
+        {
+          "id": "official-website-css",
+          "name": "MDN Web Docs",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+        },
+        {
+          "id": "documentation-css",
+          "name": "CSS Specification",
+          "url": "https://www.w3.org/Style/CSS/"
+        },
+        {
+          "id": "pronunciation-css",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/css/"
+        }
+      ]
+    },
+    {
+      "id": "reactjs",
+      "name": "ReactJS",
+      "similar": ["reactjs", "react.js", "react-js"],
+      "phonetic": "/riːˈækt dʒeɪ ɛs/",
+      "definition": "A JavaScript library for building user interfaces (alternative name for React)",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=Tn6-PIqc4UM",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "ReactJS is another name for React, a JavaScript library for building user interfaces.",
+        "It's commonly used to build single-page applications and interactive web interfaces.",
+        "ReactJS uses a component-based architecture and virtual DOM for efficient rendering."
+      ],
+      "references": [
+        {
+          "id": "official-website-reactjs",
+          "name": "Official Website",
+          "url": "https://react.dev/"
+        },
+        {
+          "id": "documentation-reactjs",
+          "name": "Documentation",
+          "url": "https://react.dev/learn"
+        },
+        {
+          "id": "pronunciation-reactjs",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/reactjs/"
+        }
+      ]
+    },
+    {
+      "id": "sqlserver",
+      "name": "SQLServer",
+      "similar": ["sqlserver", "sql-server", "mssql"],
+      "phonetic": "/ɛs kjuː ˈsɜːrvər/",
+      "definition": "Microsoft SQL Server - a relational database management system",
+      "audio": {
+        "url": "https://www.youtube.com/watch?v=7GVFYt6_ZFM",
+        "type": "youtube"
+      },
+      "descriptions": [
+        "SQL Server is Microsoft's relational database management system.",
+        "It's used for storing and retrieving data for applications.",
+        "SQL Server supports T-SQL (Transact-SQL) and provides enterprise-level features."
+      ],
+      "references": [
+        {
+          "id": "official-website-sqlserver",
+          "name": "Official Website",
+          "url": "https://www.microsoft.com/en-us/sql-server"
+        },
+        {
+          "id": "documentation-sqlserver",
+          "name": "Documentation",
+          "url": "https://docs.microsoft.com/en-us/sql/"
+        },
+        {
+          "id": "pronunciation-sqlserver",
+          "name": "Pronunciation",
+          "url": "https://forvo.com/search/sql%20server/"
+        }
       ]
     }
   ]

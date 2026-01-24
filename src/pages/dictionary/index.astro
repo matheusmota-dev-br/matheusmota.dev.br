@@ -1,0 +1,23 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { DictionarySearch } from "@/components/dictionary/DictionarySearch";
+import dictionaryData from "@/config/dictionary.json";
+---
+
+<Layout
+  title="Dictionary"
+  description="Dictionary of technical terms"
+  image="/profile.jpeg"
+>
+  <section class="bg-background">
+    <div class="container px-6 py-8 mx-auto">
+      <h1 class="text-3xl font-semibold text-center capitalize lg:text-4xl mb-8">
+        Dictionary
+      </h1>
+
+      <div class="my-8 lg:mx-40">
+        <DictionarySearch words={dictionaryData.words} client:load />
+      </div>
+    </div>
+  </section>
+</Layout>

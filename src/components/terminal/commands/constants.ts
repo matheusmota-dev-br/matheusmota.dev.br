@@ -15,4 +15,5 @@ export const pages = [
     { name: "Games", href: "/games" },
     { name: "Books", href: "/books" },
     { name: "Academic - Master", href: "/academic/master" },
+    { name: "Dictionary", href: "/dictionary" },
 ];

@@ -1,0 +1,196 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import dictionaryData from "@/config/dictionary.json";
+
+export async function getStaticPaths() {
+  return dictionaryData.words.map((word) => ({
+    params: { word: word.id },
+  }));
+}
+
+const { word } = Astro.params;
+const wordData = dictionaryData.words.find((w) => w.id === word);
+---
+
+{wordData ? (
+  <Layout
+    title={`${wordData.name} - Dictionary`}
+    description={wordData.definition}
+    image="/profile.jpeg"
+  >
+    <section class="bg-background lg:mx-40">
+      <div class="container px-6 py-8 mx-auto">
+        <div class="mb-6">
+          <a
+            href="/dictionary"
+            class="text-primary hover:text-secondary transition-colors flex items-center gap-2 mb-4"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              />
+            </svg>
+            Back to Dictionary
+          </a>
+        </div>
+
+        <div class="mb-8">
+          <h1 class="text-4xl font-bold mb-2">{wordData.name}</h1>
+          
+          {wordData.similar && wordData.similar.length > 0 && (
+            <div class="mb-4">
+              <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Also known as:</p>
+              <div class="flex flex-wrap gap-2">
+                {wordData.similar.map((similar) => (
+                  <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm text-gray-700 dark:text-gray-300 hover:bg-primary transition-colors">
+                    {similar}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {wordData.phonetic && (
+            <p class="text-lg text-gray-600 dark:text-gray-400 mb-4">
+              {wordData.phonetic}
+            </p>
+          )}
+
+          {wordData.audio && wordData.audio.url && (
+            <div class="mb-4">
+              {wordData.audio.type === "youtube" ? (
+                <a
+                  href={wordData.audio.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white transition-colors"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                  Listen on YouTube
+                </a>
+              ) : (
+                <button
+                  class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-white hover:bg-secondary transition-colors"
+                  onclick={`new Audio('${wordData.audio.url}').play()`}
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M4.929 4.929l-.707-.707m15.556 0l-.707.707M4.929 19.071l-.707.707m15.556 0l-.707-.707"
+                    />
+                  </svg>
+                  Play Audio
+                </button>
+              )}
+            </div>
+          )}
+
+          <p class="text-xl text-gray-700 dark:text-gray-300 mb-6">
+            {wordData.definition}
+          </p>
+        </div>
+
+        {wordData.descriptions && wordData.descriptions.length > 0 && (
+          <div class="my-8 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+            <h2 class="text-2xl font-semibold mb-4">Details</h2>
+            <ul class="space-y-4">
+              {wordData.descriptions.map((description) => (
+                <li class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  {description}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {wordData.references && wordData.references.length > 0 && (
+          <div class="my-8 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+            <h2 class="text-2xl font-semibold mb-4">References</h2>
+            <ul class="space-y-3">
+              {wordData.references.map((reference) => (
+                <li>
+                  <a
+                    href={reference.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-primary hover:text-secondary transition-colors flex items-center gap-2"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                    {reference.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </section>
+  </Layout>
+) : (
+  <Layout
+    title="Word Not Found - Dictionary"
+    description="The requested word was not found in the dictionary"
+    image="/profile.jpeg"
+  >
+    <section class="bg-background">
+      <div class="container px-6 py-8 mx-auto text-center">
+        <h1 class="text-4xl font-bold mb-4">Word Not Found</h1>
+        <p class="text-xl text-gray-600 dark:text-gray-400 mb-6">
+          The word "{word}" was not found in the dictionary.
+        </p>
+        <a
+          href="/dictionary"
+          class="text-primary hover:text-secondary transition-colors inline-flex items-center gap-2"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            />
+          </svg>
+          Back to Dictionary
+        </a>
+      </div>
+    </section>
+  </Layout>
+)}
