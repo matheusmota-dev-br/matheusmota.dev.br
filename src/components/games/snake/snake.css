@@ -1,0 +1,28 @@
+.snake-game-board {
+  display: grid;
+  gap: 1px;
+  background-color: var(--color-background-offset);
+  border: 2px solid var(--color-border);
+  padding: 2px;
+}
+
+.snake-cell {
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-background);
+}
+
+.snake-cell-head {
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+.snake-cell-body {
+  background-color: var(--color-secondary);
+  border-radius: 1px;
+}
+
+.snake-cell-food {
+  background-color: var(--color-success);
+  border-radius: 50%;
+}

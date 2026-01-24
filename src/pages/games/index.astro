@@ -1,0 +1,25 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { games } from "@/components/terminal/commands/constants";
+import { GamesList } from "@/components/games/GamesList";
+---
+
+<Layout
+  title="Games Collection"
+  description="Games collection for you to play"
+  image="/favicon.png"
+>
+  <section class="bg-background">
+    <div class="container px-6 py-8 mx-auto">
+      <h1 class="text-3xl font-semibold text-center capitalize lg:text-4xl">
+        Games Collection
+      </h1>
+
+      <p class="mt-4 text-center text-gray-600 dark:text-gray-400 lg:text-lg">
+        A collection of games for you to play
+      </p>
+
+      <GamesList games={games} client:load />
+    </div>
+  </section>
+</Layout>

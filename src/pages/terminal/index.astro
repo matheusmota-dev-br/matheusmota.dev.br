@@ -1,5 +1,6 @@
 ---
 import { Terminal } from "@/components/terminal/Terminal";
+import { GameModalManager } from "@/components/games/GameModalManager";
 import LayoutTerminal from "@/layouts/LayoutTerminal.astro";
 ---
 
@@ -9,4 +10,5 @@ import LayoutTerminal from "@/layouts/LayoutTerminal.astro";
   image="/profile.jpeg"
 >
   <Terminal client:load />
+  <GameModalManager client:load />
 </LayoutTerminal>
