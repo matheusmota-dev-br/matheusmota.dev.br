@@ -15,7 +15,7 @@ class GamesHelpSubCommand implements SubCommand {
             "",
             "Examples:",
             "  **games list**              Shows all available games",
-            "  **games run tetris**        Starts the Tetris game",
+            "  **games run snake**         Starts the Snake game",
         ].join("\n");
     }
 }
@@ -29,7 +29,7 @@ class GamesListSubCommand implements SubCommand {
             "",
             "To start a game, use: **games run [game_name]**",
             "",
-            "Example: **games run tetris**"
+            "Example: **games run snake**"
         ].join("\n");
     }
 }
@@ -45,7 +45,7 @@ class GamesRunSubCommand implements SubCommand {
                 "Available games:",
                 ...games.map((game) => `  • ${game}`),
                 "",
-                "Example: **games run tetris**"
+                "Example: **games run snake**"
             ].join("\n");
         }
         if (!games.includes(args[0])) {
@@ -58,8 +58,14 @@ class GamesRunSubCommand implements SubCommand {
                 "Use **games list** to see all available games."
             ].join("\n");
         }
-        /* TODO: Implements games run on screen */
-        return `Starting **${args[0]}**...\n\n(Note: Game functionality coming soon!)`;
+        
+        // Dispatch custom event to open game modal
+        const openGameEvent = new CustomEvent('openGame', {
+            detail: args[0]
+        });
+        window.dispatchEvent(openGameEvent);
+        
+        return `✓ Opening **${args[0]}** game...`;
     }
 }
 
