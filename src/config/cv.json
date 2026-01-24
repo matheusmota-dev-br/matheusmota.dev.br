@@ -4,7 +4,7 @@
         "nickname": "matheus1714",
         "skills": [
             {
-                "id": "vue3js",
+                "id": "vue",
                 "name": "Vue3JS"
             },
             {
@@ -16,7 +16,7 @@
                 "name": "Typescript"
             },
             {
-                "id": "nodejs",
+                "id": "node",
                 "name": "NodeJS"
             },
             {
@@ -141,7 +141,7 @@
             "details": "I currently work on developing structural solutions for all of the company's products. Among the most relevant experiences, I highlight the implementation of login unification between products, allowing customers to access all services with a single account. This initiative enabled the adoption of Single Sign-On (SSO) and significantly simplified access management processes, providing a more integrated and efficient experience for users.",
             "skills": [
                 {
-                    "id": "vue3js",
+                    "id": "vue",
                     "name": "Vue3JS"
                 },
                 {
@@ -149,7 +149,7 @@
                     "name": "Typescript"
                 },
                 {
-                    "id": "nodejs",
+                    "id": "node",
                     "name": "NodeJS"
                 },
                 {
@@ -277,7 +277,7 @@
                     "name": "Flask"
                 },
                 {
-                    "id": "nodejs",
+                    "id": "node",
                     "name": "NodeJS"
                 }
             ]
@@ -301,7 +301,7 @@
                     "name": "Javascript"
                 },
                 {
-                    "id": "nodejs",
+                    "id": "node",
                     "name": "NodeJS"
                 },
                 {
