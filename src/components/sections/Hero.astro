@@ -1,11 +1,10 @@
 ---
 import { Icon } from "astro-icon/components";
 import cvData from "@/config/cv.json";
+import { getDictionaryLink } from "@/utils/getDictionaryLink";
 
 const skills = cvData.basic.skills;
 const social = cvData.social;
-
-const M = '{M}'
 ---
 
 <section class="py-5 px-4 sm:py-10 lg:py-16">
@@ -58,11 +57,23 @@ const M = '{M}'
 
         <ul class="flex flex-wrap gap-2 mt-4">
           {
-            skills.map((skill) => (
-              <li id={skill.id} class="px-2 bg-primary rounded-full text-white">
-                {skill.name}
-              </li>
-            ))
+            skills.map((skill) => {
+              const dictionaryLink = getDictionaryLink(skill.id);
+              return dictionaryLink ? (
+                <li id={skill.id}>
+                  <a
+                    href={dictionaryLink}
+                    class="px-2 bg-primary rounded-full text-white hover:bg-primary transition-colors cursor-pointer inline-block"
+                  >
+                    {skill.name}
+                  </a>
+                </li>
+              ) : (
+                <li id={skill.id} class="px-2 bg-primary rounded-full text-white">
+                  {skill.name}
+                </li>
+              );
+            })
           }
         </ul>
 
