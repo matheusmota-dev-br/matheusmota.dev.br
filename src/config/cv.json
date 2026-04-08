@@ -1,7 +1,7 @@
 {
     "basic": {
         "name": "Matheus Mota",
-        "nickname": "matheus1714",
+        "nickname": "matheusmota-dev-br",
         "skills": [
             {
                 "id": "vue",
@@ -70,7 +70,7 @@
         {
             "title": "Medium",
             "icon": "Medium",
-            "url": "https://medium.com/@matheus1714"
+            "url": "https://medium.com/@matheusmota-dev-br"
         }
     ],
     "experiences": [
