@@ -55,7 +55,7 @@
         {
             "title": "Github",
             "icon": "Github",
-            "url": "https://github.com/Matheus1714"
+            "url": "https://github.com/matheusmota-dev-br"
         },
         {
             "title": "Linkedin",
@@ -337,7 +337,7 @@
             },
             "title": "Google Docs Clone",
             "type": "Website",
-            "url": "https://github.com/Matheus1714/google-docs-clone"
+            "url": "https://github.com/matheusmota-dev-br/google-docs-clone"
         },
         {
             "image": {
@@ -346,7 +346,7 @@
             },
             "title": "Barber Store",
             "type": "Website",
-            "url": "https://github.com/Matheus1714/monorepo-barber-store"
+            "url": "https://github.com/matheusmota-dev-br/monorepo-barber-store"
         },
         {
             "image": {
@@ -355,7 +355,7 @@
             },
             "title": "Summary Finantial Transaction",
             "type": "Website",
-            "url": "https://github.com/Matheus1714/summary-financial-transctions-app"
+            "url": "https://github.com/matheusmota-dev-br/summary-financial-transctions-app"
         },
         {
             "image": {
@@ -364,7 +364,7 @@
             },
             "title": "URL Shortener",
             "type": "Website",
-            "url": "https://github.com/Matheus1714/url-shortener-web"
+            "url": "https://github.com/matheusmota-dev-br/url-shortener-web"
         },
         {
             "image": {
@@ -373,7 +373,7 @@
             },
             "title": "Daily Diet (API)",
             "type": "Api",
-            "url": "https://github.com/Matheus1714/daily-diet-api"
+            "url": "https://github.com/matheusmota-dev-br/daily-diet-api"
         },
         {
             "image": {
@@ -382,7 +382,7 @@
             },
             "title": "English Blog",
             "type": "Website",
-            "url": "https://github.com/Matheus1714/english-study-website"
+            "url": "https://github.com/matheusmota-dev-br/english-study-website"
         },
         {
             "image": {
@@ -391,7 +391,7 @@
             },
             "title": "Speaking AI (Web)",
             "type": "Website",
-            "url": "https://github.com/Matheus1714/speaking-ai-web"
+            "url": "https://github.com/matheusmota-dev-br/speaking-ai-web"
         },
         {
             "image": {
@@ -400,7 +400,7 @@
             },
             "title": "Translate SQL with AI",
             "type": "Website",
-            "url": "https://github.com/Matheus1714/translate-sql-with-ai"
+            "url": "https://github.com/matheusmota-dev-br/translate-sql-with-ai"
         }
     ]
 }

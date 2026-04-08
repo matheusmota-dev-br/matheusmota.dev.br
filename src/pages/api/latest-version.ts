@@ -2,7 +2,7 @@ export async function GET() {
     // This API route will not work in static builds
     // Consider fetching data directly in components or using a build-time data generation
     try {
-        const response = await fetch('https://github.com/Matheus1714/professional-portifolio/releases/latest');
+        const response = await fetch('https://github.com/matheusmota-dev-br/professional-portifolio/releases/latest');
 
         const finalUrl = response.url;
         const paths = new URL(finalUrl).pathname.split('/');

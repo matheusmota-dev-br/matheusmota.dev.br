@@ -1,8 +1,8 @@
 # Professional Portifolio
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/Matheus1714/professional-portifolio/master.yaml?branch=master&style=for-the-badge)
-![Latest Release](https://img.shields.io/github/v/release/Matheus1714/professional-portifolio?style=for-the-badge)
-![License](https://img.shields.io/github/license/Matheus1714/professional-portifolio?style=for-the-badge)
+![Build Status](https://img.shields.io/github/actions/workflow/status/matheusmota-dev-br/professional-portifolio/master.yaml?branch=master&style=for-the-badge)
+![Latest Release](https://img.shields.io/github/v/release/matheusmota-dev-br/professional-portifolio?style=for-the-badge)
+![License](https://img.shields.io/github/license/matheusmota-dev-br/professional-portifolio?style=for-the-badge)
 
 ![](./.github/imgs/main.png)
 
@@ -30,7 +30,7 @@ A professional resume presented in a website format. This project was built usin
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/Matheus1714/professional-portifolio.git
+git clone https://github.com/matheusmota-dev-br/professional-portifolio.git
 cd professional-portifolio
 ```
 
